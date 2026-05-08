@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Forsaken Light</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="min-h-screen">
+
+  <!-- Background decoration -->
+  <div class="bg-ornament" aria-hidden="true"></div>
+
+  <!-- Header / Hero -->
+  <header class="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 text-center">
+    <div class="header-inner">
+      <p class="eyebrow">Sebuah Cerita oleh <span class="author-name">Alter</span></p>
+      <h1 class="story-title">The Forsaken Light<br/><em>Cahaya yang ditinggalkan</em></h1>
+      <div class="divider-ornament" aria-hidden="true">⸻ ✦ ⸻</div>
+      <p class="story-synopsis">
+         Rahmat Taufik Akbar, seorang anak manusia dengan jiwa yang bersih bagaikan cahaya, 
+  pernah menyinari dunia yang penuh dengan kegelapan ini. Namun suatu hari, dia 
+  tiba-tiba saja menghilang. Mari kita jelajahi masa lalunya satu demi satu, mengungkap 
+  kebenaran di balik senyum yang selama ini ia suguhkan. Apakah hidupnya benar-benar 
+  seindah yang terlihat, atau hanya sekedar topeng belaka?
+      </p>
+      <a href="chapter1.html" class="btn-start">Mulai Membaca</a>
+    </div>
+    <div class="scroll-hint" aria-hidden="true">
+      <span>Pilih Chapter</span>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 9l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+  </header>
+
+  <!-- Chapter List -->
+  <main class="relative z-10 px-6 pb-24" id="chapters">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="section-label">Daftar Chapter</h2>
+
+      <div class="chapter-list" id="chapterList">
+
+        <!-- Chapter 1 -->
+        <a href="chapter1.html" class="chapter-card" data-chapter="1">
+          <div class="chapter-meta">
+            <span class="chapter-num">01</span>
+            <span class="chapter-status" id="status-1">Belum dibaca</span>
+          </div>
+          <div class="chapter-info">
+            <h3 class="chapter-title">The Beginning · The Child Of The Light</h3>
+            <p class="chapter-desc">Awal dari semua ini, lahirnya sosok cahaya ditengah kegelapan.</p>
+          </div>
+          <div class="chapter-arrow" aria-hidden="true">→</div>
+        </a>
+
+        <!-- Chapter 2 -->
+        <a href="chapter2.html" class="chapter-card" data-chapter="2">
+          <div class="chapter-meta">
+            <span class="chapter-num">02</span>
+            <span class="chapter-status" id="status-2">Belum dibaca</span>
+          </div>
+          <div class="chapter-info">
+            <h3 class="chapter-title">The Creation Of The Saviour · The Guardian Of The Light</h3>
+            <p class="chapter-desc">Lahirnya seorang penyelamat, sosok dari kegelapan yang melindungi Sang Cahaya.</p>
+          </div>
+          <div class="chapter-arrow" aria-hidden="true">→</div>
+        </a>
+
+        <!-- Chapter 3 -->
+        <a href="chapter3.html" class="chapter-card" data-chapter="3">
+          <div class="chapter-meta">
+            <span class="chapter-num">03</span>
+            <span class="chapter-status" id="status-3">Belum dibaca</span>
+          </div>
+          <div class="chapter-info">
+            <h3 class="chapter-title">The Crumbling · The Fall Of The Light</h3>
+            <p class="chapter-desc">Sedikit demi sedikit, cahaya di dalam dirinya mulai memudar.</p>
+          </div>
+          <div class="chapter-arrow" aria-hidden="true">→</div>
+        </a>
+
+        <!-- Chapter 4 -->
+        <a href="chapter4.html" class="chapter-card" data-chapter="4">
+          <div class="chapter-meta">
+            <span class="chapter-num">04</span>
+            <span class="chapter-status" id="status-4">Belum dibaca</span>
+          </div>
+          <div class="chapter-info">
+            <h3 class="chapter-title">The Disappearance Of The Light · The End Of An Era</h3>
+            <p class="chapter-desc">Menghilangnya cahaya dari dunia, dan bangkitnya kegelapan.</p>
+          </div>
+          <div class="chapter-arrow" aria-hidden="true">→</div>
+        </a>
+
+        <!-- Chapter 5 -->
+        <a href="chapter5.html" class="chapter-card" data-chapter="5">
+          <div class="chapter-meta">
+            <span class="chapter-num">05</span>
+            <span class="chapter-status" id="status-5">Belum dibaca</span>
+          </div>
+          <div class="chapter-info">
+            <h3 class="chapter-title">The Ruling · The World After The Light</h3>
+            <p class="chapter-desc">Hidup tetap berlanjut, namun dengan sosok yang berbeda.</p>
+          </div>
+          <div class="chapter-arrow" aria-hidden="true">→</div>
+        </a>
+
+      </div>
+
+      <!-- Reading Progress Bar -->
+      <div class="progress-section">
+        <div class="progress-label">
+          <span>Progress Membaca</span>
+          <span id="progressText">0 / 5 chapter</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="progressBar" style="width: 0%"></div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="relative z-10 text-center pb-10">
+    <p class="footer-text">Ditulis dengan ♥ oleh <span class="author-name">Alter</span></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

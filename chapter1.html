@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Nomor chapter ini — dipakai script.js untuk mencatat progress -->
+  <meta name="chapter-num" content="1"/>
+  <title>Chapter 1 — The Beginning</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="min-h-screen">
+
+  <div class="bg-ornament" aria-hidden="true"></div>
+
+  <div class="relative z-10 max-w-2xl mx-auto px-6">
+
+    <!-- Tombol kembali ke index -->
+    <a href="index.html" class="back-btn">
+      ← Kembali ke Daftar Chapter
+    </a>
+
+    <!-- Header chapter -->
+    <header class="chapter-header">
+      <p class="chapter-eyebrow">Chapter 01</p>
+      <h1>The Beginning · <em>The Child Of The Light</em></h1>
+    </header>
+
+    <!-- Estimasi waktu baca (otomatis dihitung JS) -->
+    <p class="read-time">— menit baca</p>
+
+    <!-- ========================================
+         ISI CERITA — tulis di antara tag .prose
+         Setiap paragraf baru = tag <p> baru
+         ======================================== -->
+    <article class="prose">
+
+      <p>
+        Kamis, 28 Mei 2009, Banjarmasin, Kalimantan Selatan. Di sebuah rumah sakit bernama "Rumah Sakit Bhayangkara", lahirlah seorang anak manusia laki-laki yang diberi nama "Rahmat Taufik Akbar". Tidak ada yang tahu, bahwa pada hari itu dunia baru saja menerima seorang cahaya, seseorang yang akan menjadi "tempat pulang" bagi banyak orang... Meski ia sendiri tidak pernah benar-benar punya tempat untuk pulang.
+      </p>
+
+      <p>
+        Ia tumbuh sebagai anak yang pendiam. Bukan karena tidak punya suara, tapi karena ia lebih suka mendengar. Mendengar keluh kesah orang lain, mendengar hal-hal kecil yang sering luput dari perhatian. Di tengah keramaian ia bisa tampak tak terlihat, namun dengan orang yang tepat, ia hadir sepenuhnya. Disakiti berkali-kali, namun tidak pernah sekalipun ia memilih untuk menjadi dingin dan jahat seperti dunia yang telah menyakitinya. Seolah kebaikan itu bukan pilihan baginya, melainkan satu-satunya cara ia tahu bagaimana cara hidup.
+      </p>
+
+      <p>
+        Di suatu waktu, orang tuanya bercerai, meninggalkannya dengan ibu dan kedua kaka perempuannya. Meski ayahnya tetap ada dan menafkahi, dari titik itu hidupnya mulai berubah. Ia mulai merasakan bahwa dunia ini tidaklah adil, bahwa orang-orang yang seharusnya mencintainya malah menyakitinya. Namun ia tetap memilih untuk memaafkan, tetap memilih untuk percaya bahwa di balik semua kegelapan itu, masih ada cahaya yang bisa ditemukan.
+      </p>
+
+      <p>
+        Di sekolah, orang-orang melihatnya sebagai "anak baik yang selalu murah senyum dan terlihat bahagia". Ada yang menerimanya dengan tulus, namun tidak sedikit pula yang memanfaatkan dan mengejeknya karena sifat pendiamnya. Meskipun begitu, Taufik tetap memilih menjadi dirinya sendiri, menjadi cahaya untuk orang lain, meski itu berarti ia harus menanggung semua beban itu sendirian. Ia tidak pernah mengeluh, tidak pernah meminta bantuan, dan terkadang dia menangis dalam diam.
+      </p>
+
+      <p>
+        Ia tidak ingin menjadi beban untuk orang lain.
+      </p>
+
+    </article>
+    <!-- ======================================== -->
+
+    <!-- Navigasi antar chapter -->
+    <nav class="chapter-nav">
+      <!-- Tombol Sebelumnya: tambah class "disabled" jika chapter pertama -->
+      <a href="#" class="nav-btn disabled">← Sebelumnya</a>
+
+      <a href="index.html" class="nav-center">⸻ Daftar Chapter ⸻</a>
+
+      <!-- Tombol Berikutnya: ganti href ke chapter berikutnya -->
+      <a href="chapter2.html" class="nav-btn">Berikutnya →</a>
+    </nav>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
