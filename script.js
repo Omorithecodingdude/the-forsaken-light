@@ -4,8 +4,10 @@
 
 const TOTAL_CHAPTERS = 5;
 const STORAGE_KEY = 'story_read_chapters';
+const LAST_READ_KEY = 'story_last_read';
+const WORDS_PER_CHAPTER_KEY = 'story_words_per_chapter';
 
-// --- Utility: Ambil data chapter yang sudah dibaca dari localStorage ---
+// --- Utility: Ambil data chapter yang sudah dibaca ---
 function getReadChapters() {
   try {
     const data = localStorage.getItem(STORAGE_KEY);
@@ -22,9 +24,109 @@ function markChapterRead(chapterNum) {
     read.push(chapterNum);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(read));
   }
+  localStorage.setItem(LAST_READ_KEY, chapterNum);
 }
 
-// --- Update tampilan status & progress bar di index.html ---
+// --- Utility: Ambil chapter terakhir yang dibaca ---
+function getLastRead() {
+  try {
+    const data = localStorage.getItem(LAST_READ_KEY);
+    return data ? parseInt(data, 10) : null;
+  } catch {
+    return null;
+  }
+}
+
+// --- Utility: Simpan estimasi kata per chapter ---
+function saveWordCount(chapterNum, words) {
+  try {
+    const data = localStorage.getItem(WORDS_PER_CHAPTER_KEY);
+    const counts = data ? JSON.parse(data) : {};
+    counts[chapterNum] = words;
+    localStorage.setItem(WORDS_PER_CHAPTER_KEY, JSON.stringify(counts));
+  } catch {}
+}
+
+// =============================================
+//   FITUR 1 — SCROLL PROGRESS BAR
+// =============================================
+
+function initScrollProgress() {
+  const bar = document.createElement('div');
+  bar.id = 'scrollProgressBar';
+  bar.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background: var(--accent);
+    z-index: 9999;
+    transition: width 0.1s linear;
+  `;
+  document.body.appendChild(bar);
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    bar.style.width = pct + '%';
+  });
+}
+
+// =============================================
+//   FITUR 2 — LAST READ HIGHLIGHT
+// =============================================
+
+function highlightLastRead() {
+  const lastRead = getLastRead();
+  if (!lastRead) return;
+
+  const card = document.querySelector(`.chapter-card[data-chapter="${lastRead}"]`);
+  if (!card) return;
+
+  const meta = card.querySelector('.chapter-meta');
+  if (meta) {
+    const badge = document.createElement('span');
+    badge.className = 'last-read-badge';
+    badge.textContent = 'Terakhir dibaca';
+    meta.appendChild(badge);
+  }
+}
+
+// =============================================
+//   FITUR 3 — ESTIMATED FINISH TIME
+// =============================================
+
+function updateEstimatedFinish() {
+  const el = document.getElementById('estimatedFinish');
+  if (!el) return;
+
+  const read = getReadChapters();
+  const remaining = TOTAL_CHAPTERS - read.length;
+
+  if (remaining === 0) {
+    el.textContent = 'Semua chapter selesai dibaca ✦';
+    return;
+  }
+
+  try {
+    const data = localStorage.getItem(WORDS_PER_CHAPTER_KEY);
+    const counts = data ? JSON.parse(data) : {};
+    const knownChapters = Object.keys(counts).length;
+    if (knownChapters === 0) return;
+
+    const totalWords = Object.values(counts).reduce((a, b) => a + b, 0);
+    const avgPerChapter = totalWords / knownChapters;
+    const remainingMinutes = Math.max(1, Math.round((avgPerChapter * remaining) / 200));
+    el.textContent = `~${remainingMinutes} menit lagi untuk menyelesaikan cerita ini`;
+  } catch {}
+}
+
+// =============================================
+//   FUNGSI LAMA — DIPERTAHANKAN
+// =============================================
+
 function updateIndexPage() {
   const read = getReadChapters();
 
@@ -41,7 +143,6 @@ function updateIndexPage() {
     }
   }
 
-  // Update progress bar
   const count = read.length;
   const pct = Math.round((count / TOTAL_CHAPTERS) * 100);
 
@@ -51,7 +152,6 @@ function updateIndexPage() {
   if (text) text.textContent = `${count} / ${TOTAL_CHAPTERS} chapter`;
 }
 
-// --- Hitung estimasi waktu baca ---
 function calcReadTime() {
   const proseEl = document.querySelector('.prose');
   if (!proseEl) return;
@@ -59,9 +159,14 @@ function calcReadTime() {
   const minutes = Math.max(1, Math.round(words / 200));
   const el = document.querySelector('.read-time');
   if (el) el.textContent = `${minutes} menit baca`;
+
+  const meta = document.querySelector('meta[name="chapter-num"]');
+  if (meta) {
+    const num = parseInt(meta.content, 10);
+    if (!isNaN(num)) saveWordCount(num, words);
+  }
 }
 
-// --- Tandai chapter saat ini sebagai sudah dibaca ---
 function markCurrentChapterRead() {
   const meta = document.querySelector('meta[name="chapter-num"]');
   if (!meta) return;
@@ -69,16 +174,20 @@ function markCurrentChapterRead() {
   if (!isNaN(num)) markChapterRead(num);
 }
 
-// --- Init berdasarkan halaman ---
+// =============================================
+//   INIT
+// =============================================
+
 document.addEventListener('DOMContentLoaded', () => {
-  // Halaman index
   if (document.getElementById('chapterList')) {
     updateIndexPage();
+    highlightLastRead();
+    updateEstimatedFinish();
   }
 
-  // Halaman chapter
   if (document.querySelector('.prose')) {
     markCurrentChapterRead();
     calcReadTime();
+    initScrollProgress();
   }
 });

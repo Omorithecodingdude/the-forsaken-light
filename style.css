@@ -105,6 +105,7 @@ a { text-decoration: none; color: inherit; }
   position: relative;
   transition: color 0.3s, background 0.3s;
   overflow: hidden;
+  border-radius: 6px;
 }
 
 .btn-start::before {
@@ -116,6 +117,7 @@ a { text-decoration: none; color: inherit; }
   transform-origin: left;
   transition: transform 0.3s ease;
   z-index: -1;
+  border-radius: 6px;
 }
 
 .btn-start:hover {
@@ -297,11 +299,15 @@ a { text-decoration: none; color: inherit; }
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--text-dim);
-  padding: 1.5rem 0;
   transition: color 0.2s;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  padding: 0.4rem 1rem;
 }
 
-.back-btn:hover { color: var(--accent); }
+.back-btn:hover { color: var(--accent);
+ border-color: var(--accent);
+}
 
 /* Chapter header */
 .chapter-header {
@@ -381,10 +387,14 @@ a { text-decoration: none; color: inherit; }
   text-transform: uppercase;
   color: var(--text-muted);
   transition: color 0.2s;
-  padding: 0.5rem 0;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  padding: 0.5rem 1rem;
 }
 
-.nav-btn:hover { color: var(--accent); }
+.nav-btn:hover { color: var(--accent); 
+ border-color: var(--accent);
+}
 
 .nav-btn.disabled {
   opacity: 0.3;
@@ -470,4 +480,108 @@ a { text-decoration: none; color: inherit; }
   color: var(--text-dim);
   margin-top: 0.6rem;
   font-style: italic;
+}
+
+/* =============================================
+   ABOUT PAGE
+   ============================================= */
+
+.about-body {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  line-height: 1.85;
+  color: #d4c5b0;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.about-body p {
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.about-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border-hover);
+  opacity: 0.9;
+}
+
+.sosmed-block {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sosmed-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 1.25rem;
+}
+
+.sosmed-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.sosmed-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-family: var(--font-body);
+  transition: color 0.25s, border-color 0.25s;
+  border-radius: 6px;
+}
+
+.sosmed-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.about-link {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.about-link a {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  transition: color 0.2s;
+}
+
+.about-link a:hover {
+  color: var(--accent);
+}
+
+/* Last read badge */
+.last-read-badge {
+  display: block;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-dim);
+  margin-top: 0.2rem;
+}
+
+/* Estimated finish */
+.estimated-finish {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-align: center;
+  margin-top: 1rem;
 }
