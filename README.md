@@ -30,6 +30,14 @@ If you find yourself uncomfortable while reading, you are allowed to stop. You d
 
 The story follows Taufik and Alter through experiences involving trauma, trust, betrayal, identity, and the psychological consequences of what they have been through.
 
+## 🖥️ Recommended Experience
+
+**The Forsaken Light is designed to be experienced on a desktop browser.**
+
+While the story may technically be accessible from mobile devices, the website's visual layout, interactive elements, and multimedia content are designed with desktop in mind.
+
+For the intended experience, reading on a computer is strongly recommended.
+
 ## 🎭 Themes
 
 At its core, *The Forsaken Light* deals with:
