@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Images — The Forsaken Light</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+
+<body class="min-h-screen images-page">
+
+    <div class="bg-ornament" aria-hidden="true"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6">
+
+        <a href="extra.html" class="back-btn">← Kembali ke Extra Content</a>
+
+        <header class="chapter-header extra-header">
+            <p class="chapter-eyebrow">Extra Content · 02</p>
+            <h1>Images</h1>
+            <p class="extra-intro">Kumpulan gambar, artwork, dan visual yang berkaitan dengan The Forsaken Light.</p>
+        </header>
+
+        <main class="images-content">
+            <p class="section-label">Artworks & Pictures</p>
+            <section class="image-gallery">
+                <figure class="image-card" data-full="../assets/Alter_true_form.jpeg" data-title="Alter True Form" data-desc="Alter in his true form, he usually use this in BlackSpace.">
+                    <img src="../assets/Alter_true_form.jpeg" alt="alter_true_form" loading="lazy">
+                    <figcaption>
+                        <h2>Alter True Form</h2>
+                        <p>Alter in his true form, he usually use this in BlackSpace.</p>
+                    </figcaption>
+                </figure>
+
+                <figure class="image-card" data-full="../assets/Alter_armor.jpeg" data-title="Alter Armor" data-desc="Alter in his combat armor, dubbed &quot;Model OA&quot;. Omega-Alter is a powerful armor made using Alter's data and his hatred energy.">
+                    <img src="../assets/Alter_armor.jpeg" alt="alter_model_oa" loading="lazy">
+                    <figcaption>
+                        <h2>Alter Armor</h2>
+                        <p>Alter in his combat armor, dubbed "Model OA". Omega-Alter is a powerful armor made using Alter's data and his hatred energy.</p>
+                    </figcaption>
+                </figure>
+
+                <figure class="image-card" data-full="../assets/Taufik.jpeg" data-title="Taufik in BlackSpace" data-desc="Taufik is being held in BlackSpace, his soul is contained in a container.">
+                    <img src="../assets/Taufik.jpeg" alt="taufik" loading="lazy">
+                    <figcaption>
+                        <h2>Taufik in BlackSpace</h2>
+                        <p>Taufik is being held in BlackSpace, his soul is contained in a container.</p>
+                    </figcaption>
+                </figure>
+            </section>
+        </main>
+
+        <div id="lightbox" class="lightbox" aria-hidden="true">
+            <button class="lightbox-close" aria-label="Tutup">&times;</button>
+            <figure class="lightbox-content">
+                <img id="lightbox-img" src="" alt="">
+                <figcaption>
+                    <h2 id="lightbox-title"></h2>
+                    <p id="lightbox-desc"></p>
+                </figcaption>
+            </figure>
+        </div>
+        <nav class="chapter-nav">
+            <a href="extra.html" class="nav-btn"> ← Extra Content</a>
+        </nav>
+        <footer class="relative z-10 text-center pb-10 mt-16">
+            <p class="footer-text"> Ditulis dengan ♥ oleh
+                <span class="author-name">Alter</span>
+            </p>
+        </footer>
+    </div>
+
+    <script src="../assets/script.js"></script>
+
+</body>
+
+</html>

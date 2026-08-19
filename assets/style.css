@@ -938,50 +938,50 @@ a {
    ========================================= */
 
 .lofi-page {
-    background: #050505;
+  background: #050505;
 }
 
 
 /* Background video */
 
 .lofi-video-bg {
-    position: fixed;
-    inset: 0;
+  position: fixed;
+  inset: 0;
 
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    overflow: hidden;
+  overflow: hidden;
 
-    z-index: 0;
+  z-index: 0;
 
-    pointer-events: none;
+  pointer-events: none;
 }
 
 .lofi-video-bg video {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    object-fit: cover;
+  object-fit: cover;
 
-    filter: saturate(0.85);
+  filter: saturate(0.85);
 }
 
 
 /* Dark overlay */
 
 .lofi-video-overlay {
-    position: fixed;
-    inset: 0;
+  position: fixed;
+  inset: 0;
 
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    background: rgba(0, 0, 0, 0.58);
+  background: rgba(0, 0, 0, 0.58);
 
-    z-index: 1;
+  z-index: 1;
 
-    pointer-events: none;
+  pointer-events: none;
 }
 
 /* =========================================
@@ -989,87 +989,277 @@ a {
    ========================================= */
 
 .lofi-page .back-btn {
-    color: rgba(255, 255, 255, 0.82);
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  color: rgba(255, 255, 255, 0.82);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .lofi-page .back-btn:hover {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 
 /* Header */
 
 .lofi-page .chapter-eyebrow {
-    color: rgba(255, 255, 255, 0.72);
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+  color: rgba(255, 255, 255, 0.72);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
 }
 
 .lofi-page .extra-header h1 {
-    color: #ffffff;
-    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.9);
+  color: #ffffff;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.9);
 }
 
 .lofi-page .extra-intro {
-    color: rgba(255, 255, 255, 0.78);
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+  color: rgba(255, 255, 255, 0.78);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
 }
 
 
 /* Section */
 
 .lofi-page .section-label {
-    color: rgba(255, 255, 255, 0.68);
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+  color: rgba(255, 255, 255, 0.68);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
 }
 
 .lofi-page .extra-section-title {
-    color: #ffffff;
-    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.9);
+  color: #ffffff;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.9);
 }
 
 .lofi-page .extra-section-description {
-    color: rgba(255, 255, 255, 0.78);
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+  color: rgba(255, 255, 255, 0.78);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
 }
 
 
 /* Song descriptions */
 
 .lofi-page .lofi-description {
-    color: rgba(255, 255, 255, 0.88);
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+  color: rgba(255, 255, 255, 0.88);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
 }
 
 
 /* Placeholder */
 
 .lofi-page .spotify-placeholder {
-    color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .lofi-page .spotify-placeholder-icon {
-    color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.75);
 }
 
 
 /* Navigation */
 
 .lofi-page .chapter-nav {
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
 }
 
 .lofi-page .nav-btn {
-    color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.82);
 }
 
 
 /* Footer */
 
 .lofi-page .footer-text {
-    color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.65);
 }
 
 .lofi-page .author-name {
-    color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* =============================================
+   IMAGES PAGE
+   ============================================= */
+
+.images-page {
+  background: var(--bg);
+}
+
+
+/* Gallery */
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+
+  margin-top: 2rem;
+}
+
+
+/* Individual image */
+
+.image-card {
+  margin: 0;
+
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+
+  overflow: hidden;
+
+  cursor: zoom-in;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.image-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--text-dim);
+}
+
+
+/* Image itself — uniform thumbnail size, cropped to fit */
+
+.image-card img {
+  display: block;
+
+  width: 100%;
+  aspect-ratio: 4 / 5;
+
+  object-fit: cover;
+  object-position: top;
+}
+
+
+/* Caption */
+
+.image-card figcaption {
+  padding: 1.25rem;
+}
+
+.image-card h2 {
+  margin: 0 0 0.4rem;
+
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+
+  color: var(--text);
+}
+
+.image-card p {
+  margin: 0;
+
+  color: var(--text-muted);
+
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+
+/* =============================================
+   IMAGES PAGE — MOBILE
+   ============================================= */
+
+@media (max-width: 640px) {
+
+  .image-gallery {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+}
+
+@media (min-width: 641px) and (max-width: 900px) {
+
+  .image-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =============================================
+   LIGHTBOX
+   ============================================= */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+
+  background: rgba(0, 0, 0, 0.9);
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease;
+}
+
+.lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-content {
+  margin: 0;
+  max-width: min(90vw, 900px);
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+}
+
+.lightbox-content img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.lightbox-content figcaption {
+  padding: 1.25rem;
+}
+
+.lightbox-content h2 {
+  margin: 0 0 0.4rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.lightbox-content p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+
+  width: 2.5rem;
+  height: 2.5rem;
+
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text);
+
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.lightbox-close:hover {
+  border-color: var(--text-dim);
+  color: var(--text-dim);
 }

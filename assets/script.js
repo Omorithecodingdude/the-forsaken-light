@@ -175,6 +175,49 @@ function markCurrentChapterRead() {
 }
 
 // =============================================
+//   IMAGES PAGE — LIGHTBOX
+// =============================================
+
+function initLightbox() {
+  const lightbox = document.getElementById('lightbox');
+  if (!lightbox) return;
+
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxTitle = document.getElementById('lightbox-title');
+  const lightboxDesc = document.getElementById('lightbox-desc');
+  const closeBtn = lightbox.querySelector('.lightbox-close');
+
+  function openLightbox(card) {
+    lightboxImg.src = card.dataset.full;
+    lightboxImg.alt = card.querySelector('img').alt;
+    lightboxTitle.textContent = card.dataset.title || '';
+    lightboxDesc.textContent = card.dataset.desc || '';
+    lightbox.classList.add('is-open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('is-open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    lightboxImg.src = '';
+  }
+
+  document.querySelectorAll('.image-card').forEach((card) => {
+    card.addEventListener('click', () => openLightbox(card));
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+}
+
+// =============================================
 //   INIT
 // =============================================
 
@@ -190,4 +233,6 @@ document.addEventListener('DOMContentLoaded', () => {
     calcReadTime();
     initScrollProgress();
   }
+
+  initLightbox();
 });
