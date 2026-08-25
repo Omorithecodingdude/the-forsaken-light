@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Videos — The Forsaken Light</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/style.css" />
+</head>
+
+<body class="min-h-screen videos-page">
+
+    <div class="bg-ornament" aria-hidden="true"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6">
+
+        <!-- Back -->
+        <a href="extra.html" class="back-btn">
+            ← Kembali ke Extra Content
+        </a>
+
+        <!-- Header -->
+        <header class="chapter-header extra-header">
+
+            <p class="chapter-eyebrow">
+                Extra Content · 03
+            </p>
+
+            <h1>
+                Videos
+            </h1>
+
+            <p class="extra-intro">
+                Cuplikan, animatic, atau video lain yang berkaitan dengan The Forsaken Light.
+            </p>
+
+        </header>
+
+
+        <!-- Content -->
+        <main class="extra-content">
+
+            <!-- ============================================
+           SECTION 1 — VIDEO LOKAL (file di assets/)
+           Cara pakai:
+           1. Taruh file video (mp4) di folder assets/
+           2. Ganti src="../assets/NAMA_FILE.mp4"
+           3. Ganti judul & deskripsi di figcaption
+           ============================================ -->
+
+            <!-- ============================================
+           SECTION 2 — YOUTUBE / SUMBER LUAR
+           Cara pakai:
+           1. Buka video YouTube > Share > Embed
+           2. Ambil VIDEO_ID dari link embed
+              (https://www.youtube.com/embed/VIDEO_ID)
+           3. Tempel VIDEO_ID di src iframe
+           ============================================ -->
+
+            <section class="extra-section">
+
+                <p class="section-label">
+                    External Source
+                </p>
+
+                <p class="extra-section-description">
+                    Video yang di-embed langsung dari YouTube atau sumber luar lainnya.
+                </p>
+
+                <div class="video-gallery">
+
+                    <!-- Contoh embed YouTube, ganti VIDEO_ID -->
+                    <figure class="video-card">
+                        <div class="video-frame">
+                            <iframe width="560" height="315"
+                                src="https://www.youtube.com/embed/U6r-pOuRnkE?si=vrgRcY6ZUQP36cIM"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <figcaption>
+                            <h2>My Goodbye</h2>
+                            <p>Animatic of My Goodbye by Sirell.</p>
+                        </figcaption>
+                    </figure>
+
+                    <!-- Placeholder, hapus / duplikat sesuai kebutuhan -->
+                    <div class="video-placeholder">
+                        <span class="video-placeholder-icon">▶</span>
+                        <p>Video akan ditambahkan di sini.</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Navigation -->
+            <nav class="chapter-nav">
+
+                <a href="extra.html" class="nav-btn">
+                    ← Extra Content
+                </a>
+
+            </nav>
+
+        </main>
+
+
+        <!-- Footer -->
+        <footer class="relative z-10 text-center pb-10 mt-16">
+
+            <p class="footer-text">
+                Ditulis dengan ♥ oleh
+                <span class="author-name">Alter</span>
+            </p>
+
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
