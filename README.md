@@ -38,6 +38,8 @@ While the story may technically be accessible from mobile devices, the website's
 
 For the intended experience, reading on a computer is strongly recommended.
 
+I strongly suggest that you read this in a computer using Chrome.
+
 ## 🎭 Themes
 
 At its core, *The Forsaken Light* deals with:
