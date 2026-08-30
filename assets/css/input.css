@@ -1,7 +1,11 @@
-/* =============================================
-   STORY WEBSITE — style.css
-   ============================================= */
+@import "tailwindcss";
 
+/* ==============================================
+   STORY WEBSITE — input.css
+   Hasil migrasi dari CDN ke Tailwind CLI
+   ============================================== */
+
+@layer base {
 /* --- FONTS & ROOT VARIABLES --- */
 :root {
   --bg: #0e0c0a;
@@ -19,7 +23,9 @@
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body: 'Crimson Text', Georgia, serif;
 }
+}
 
+@layer components {
 /* --- RESET & BASE --- */
 *,
 *::before,
@@ -1814,4 +1820,5 @@ a {
   color: var(--text-muted);
   max-width: 28rem;
   margin-top: 0.75rem;
+}
 }
