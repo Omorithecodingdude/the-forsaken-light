@@ -36,9 +36,9 @@ The story follows Taufik and Alter through experiences involving trauma, trust, 
 
 While the story may technically be accessible from mobile devices, the website's visual layout, interactive elements, and multimedia content are designed with desktop in mind.
 
-For the intended experience, reading on a computer is strongly recommended.
+For the intended experience, reading on a computer and using chrome is strongly recommended.
 
-I strongly suggest that you read this in a computer using Chrome.
+Also, you need to be signed in to YouTube and Spotify website.
 
 ## 🎭 Themes
 
@@ -74,6 +74,10 @@ The main story consists of **five chapters**.
 This repository contains the website and assets belonging to the project.
 
 The main story is considered complete.
+
+## Credits
+
+All assets used in The Forsaken Light is not mine. All credit goes to their respectful owner.
 
 ## Final Note
 
