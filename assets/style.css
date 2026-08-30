@@ -1645,3 +1645,173 @@ a {
   }
 
 }
+
+/* =============================================
+   SECRET WORD MECHANIC — "???" mystery unlock
+   ============================================= */
+
+.secret-word {
+  cursor: pointer;
+  position: relative;
+  color: var(--text);
+  text-decoration: underline dotted var(--text-dim);
+  text-underline-offset: 3px;
+  transition: color 0.25s, text-decoration-color 0.25s;
+}
+
+.secret-word:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+.secret-word.is-found {
+  color: var(--accent);
+  text-decoration: underline solid var(--accent);
+  cursor: default;
+}
+
+/* --- Toast notification --- */
+
+.secret-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 2rem;
+  transform: translate(-50%, 20px);
+  z-index: 9999;
+
+  background: var(--bg-card);
+  border: 1px solid var(--accent-dim);
+  color: var(--text);
+  font-family: var(--font-body, inherit);
+  font-size: 0.9rem;
+
+  padding: 0.85rem 1.25rem;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+
+  text-align: center;
+}
+
+.secret-toast strong {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.secret-toast.is-visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* --- "???" card on Extra Content page --- */
+
+.extra-card.mystery-card.is-locked {
+  opacity: 0.55;
+}
+
+.extra-card.mystery-card.is-locked .extra-card-number,
+.extra-card.mystery-card.is-locked .extra-card-arrow {
+  color: var(--text-dim);
+}
+
+.extra-card.mystery-card.is-locked:hover {
+  background: transparent;
+  border-color: var(--border);
+  cursor: default;
+}
+
+.mystery-progress {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  margin-top: 0.35rem;
+  letter-spacing: 0.02em;
+}
+
+.extra-card.mystery-card.is-unlocked .mystery-progress {
+  color: var(--accent);
+}
+
+/* --- Clue toggle + list --- */
+
+.mystery-hint-wrap {
+  margin-top: 0.6rem;
+}
+
+.mystery-hint-toggle {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-family: inherit;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.mystery-hint-toggle:hover {
+  color: var(--accent);
+  border-color: var(--accent-dim);
+}
+
+.mystery-hint-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.mystery-hint-body.is-open {
+  max-height: 400px;
+  margin-top: 0.6rem;
+}
+
+.mystery-hints {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.mystery-hint-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.mystery-hint-row.is-found {
+  color: var(--text-dim);
+}
+
+.mystery-hint-mark {
+  flex-shrink: 0;
+  width: 1.1rem;
+  text-align: center;
+  color: var(--text-dim);
+}
+
+.mystery-hint-row.is-found .mystery-hint-mark {
+  color: var(--accent);
+}
+
+/* --- Locked-page guard message (main/mystery.html) --- */
+
+.locked-guard {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.locked-guard p {
+  color: var(--text-muted);
+  max-width: 28rem;
+  margin-top: 0.75rem;
+}
