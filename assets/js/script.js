@@ -17,7 +17,7 @@ const SECRET_WORDS = ['rokok', 'vape', 'Ukhuwah', 'broken home', 'pisau', 'Skeng
 // ke halaman lain, update juga clue-nya di sini biar tetap fair.
 const SECRET_WORD_HINTS = {
   rokok: 'Benda yang menyebabkan penikmatnya kecanduan.',
-  vape: 'Salah satu benda yang menyebabkan Taufik kembali ke rumahnya sambil menangis.',
+  vape: 'Benda yang menyebabkan Taufik kembali ke rumahnya sambil menangis.',
   Ukhuwah: 'Sekolah yang katanya "Sekolah islam swasta terbaik".',
   'broken home': 'Kondisi dimana rumah tidak terasa seperti rumah.',
   pisau: 'Salah satu benda yang masuk ke "Daftar benda yang membuat Taufik trauma".',
