@@ -38,7 +38,11 @@ While the story may technically be accessible from mobile devices, the website's
 
 For the intended experience, reading on a computer and using chrome is strongly recommended.
 
-Also, you need to be signed in to YouTube and Spotify website.
+Also, you need to be signed in to Spotify website/app.
+
+## Known Issue
+
+If you're not signed in to Spotify or if your browser don't have DRM support, Spotify embed in the LoFi page will fallback to preview.
 
 ## 🎭 Themes
 
