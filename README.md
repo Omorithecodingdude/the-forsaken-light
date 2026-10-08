@@ -79,6 +79,14 @@ This repository contains the website and assets belonging to the project.
 
 The main story is considered complete.
 
+## Technology Used In This Project
+
+Codes: HTML5, TailwindCSS (CLI), JS (Vanilla JavaScript)
+
+Hosting: Netlify
+
+Other: Git, GitHub
+
 ## Credits
 
 All assets used in The Forsaken Light is not mine. All credit goes to their respectful owner.
